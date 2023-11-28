@@ -2,16 +2,37 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Character player1 = new Character("Jordan");
+        Sword sw1 = new Sword("Excalibur" ,50);
+        Shield sh1 = new Shield("RustyShield",10);
+        player1.levelUp();
+        player1.levelUp();
+        player1.levelUp();
+        player1.levelUp();
+        player1.levelUp();
+        player1.levelUp();
+        player1.levelUp();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        player1.displayStats();
+        player1.equip(sw1);
+        player1.displayStats();
+        player1.equip(sh1);
+        player1.displayStats();
+        player1.unequipShield();
+        for (int i = 0; i < 50; i++) { // max level of equipment is 50.
+            sh1.levelUp();
         }
+        player1.equip(sh1);
+        player1.displayStats();
+        player1.takeDamage(sw1,sh1);
+        player1.unequipSword();
+        player1.displayStats();
+        Sword sw2 = new Sword("godGloves",80);
+        player1.unequipShield();
+        player1.displayStats();
+        player1.equip(sw2);
+        player1.equip(new Shield("LOL",40));
+        player1.displayStats();
     }
 }
